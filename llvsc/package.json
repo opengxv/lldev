@@ -14,6 +14,7 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		
 		"commands": [{
 			"command": "extension.helloWorld",
 			"title": "Hello World"
