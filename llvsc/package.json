@@ -10,15 +10,55 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onLanguage:cpp",
+		"onLanguage:c"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"commands": [
+			{
+				"command": "llvsc.smartSpace",
+				"title": "Smart Space",
+				"category": "llvsc"
+			},
+			{
+				"command": "llvsc.smartSemicolon",
+				"title": "Smart Semicolon",
+				"category": "llvsc"
+			},
+			{
+				"command": "llvsc.smartColon",
+				"title": "Smart Colon",
+				"category": "llvsc"
+			},
+			{
+				"command": "llvsc.smartEnter",
+				"title": "Smart Enter",
+				"category": "llvsc"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "llvsc.smartSpace",
+				"key": "space",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "llvsc.smartSemicolon",
+				"key": ";",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "llvsc.smartColon",
+				"key": "shift+;",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "llvsc.smartEnter",
+				"key": "shift+enter",
+				"when": "editorTextFocus"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -37,5 +77,10 @@
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.0.2"
+	},
+	"dependencies": {
+		"vscode-debugadapter": "^1.35.0",
+		"vscode-debugprotocol": "^1.35.0",
+		"vscode-extension-telemetry": "^0.1.2"
 	}
 }
